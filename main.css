@@ -1,0 +1,1007 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+/* تنسيق الوضع النهاري */
+body[data-theme="light"] {
+  background-color: #FFF; /* خلفية الصفحة */
+  color: #000; /* لون النص العام */
+}
+
+body[data-theme="light"] header {
+  background: linear-gradient(90deg, #5de0e6, #004aad); /* خلفية الهيدر */
+  color: #000; /* لون النص في الهيدر */
+}
+body[data-theme="light"] .content-home{
+  background-image: url(images/2.png);
+  background-position: center;
+  background-size: cover;
+} 
+body[data-theme="light"] h2 {
+  color: #5de0e6; /* لون العناوين */
+}
+body[data-theme="light"] p {
+  color: #000000; /* لون العناوين */
+}
+body[data-theme="light"] button,body[data-theme="light"] .btn-home ,body[data-theme="light"] .btn-log button{
+  background:radial-gradient(circle,#5de0e6,#004aad) ;
+}
+body[data-theme="light"] .servises ,body[data-theme="light"] .Specialty{
+  background:#ffffff; /* خلفية الهيدر */
+  color: #000000; /* لون النص في الهيدر */}
+/* تنسيق الوضع الليلي */
+body[data-theme="dark"] {
+  background-color: #000; /* خلفية الصفحة */
+  color: #FFF; /* لون النص العام */
+}
+
+body[data-theme="dark"] header {
+  background: linear-gradient(90deg, #3533cd, #000000); /* خلفية الهيدر */
+  color: #FFF; /* لون النص في الهيدر */
+}
+body[data-theme="dark"] .content-home{
+  background-image:url(images/3.png);
+  background-position: center;
+  background-size: cover;
+} 
+body[data-theme="dark"] h2 {
+  color: #3533cd; /* لون العناوين */
+}
+body[data-theme="dark"] p {
+ color: #ffffff;
+}
+body[data-theme="dark"] button ,body[data-theme="dark"] .btn-home,body[data-theme="dark"] .btn-log button{
+  background: linear-gradient(90deg, #3533cd, #000000);  ; /* لون الأزرار */
+  color: #FFF; /* لون نص الأزرار */
+}
+body[data-theme="dark"] .servises ,body[data-theme="dark"] .Specialty{
+  background:#000; /* خلفية الهيدر */
+  color: #ffffff; /* لون النص في الهيدر */}
+
+/* تنسيق زر التبديل */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0cc0df;
+  transition: 0.3s;
+  border-radius: 40px;
+}
+
+input:checked + .slider {
+  background-color: #3533cd;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider::after {
+  content: "🌞";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+input:checked + .slider::after {
+  content: "🌑";
+  left: 30px;
+  opacity: 1;
+}
+.end-section{
+  width: 100%;
+  height: 100%;
+  padding: 50px 100px;
+ padding-bottom: 100px;
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #032c63;
+  justify-content: space-around;
+  color: #ffffff;
+}
+hr{
+  background-color: #0cc0df;
+  height: 2px;
+  border: none;
+}
+.content-end-section{
+  gap: 20px;
+}
+.end-section p{
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffffc9;
+}
+.end-section p:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.end-section h3{
+  color: #0cc0df;
+}
+.end-section .title{
+  color: #0cc0df;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+@keyframes generalRise {
+  from {
+      opacity: 0;
+      transform: translateY(100px); /* يبدأ من الأسفل */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+header ,.discraiption-doctor,.Specialty,.doctor,.about-us,.contact,.log-in,.register,.servises,.booking{
+  animation: generalRise 1s ease-out forwards;
+}
+
+header{
+background:linear-gradient(90deg,#5de0e6,#004aad) ;
+position: fixed;
+z-index:999;
+min-width: 100%;
+display: flex;
+padding: 10px;
+}
+.navigation{
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  
+}
+.logo{
+color: #ffffff;
+text-transform: uppercase;
+font-size: 25px;
+font-weight: bold;
+}
+.main-head{
+  gap:30px;
+  display: flex;
+}
+.navigation .head{
+color: #ffffff;
+text-transform: uppercase;
+font-size: 15px;
+font-weight: bold;
+text-shadow: rgba(0,0,0,3);
+}
+.head:hover,.logo:hover{
+  color: #ebebeb;
+  transform: scale(1.1);
+  transition-delay: 0.2s;
+}
+.main-btn .btn-log button{
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #000000 1px;
+border-radius:50px;
+background:radial-gradient(circle,#5de0e6,#004aad) ;
+color: #ffffff;
+font-size: 13;
+font-weight: bold;
+padding: 5px 15px;
+cursor: pointer;
+text-transform: uppercase;
+}
+.btn-log button:hover{
+border: solid #ffffff 1px;
+transform: scale(1.1);
+transition-delay:0.1s;
+background:#000000;
+color: #ffffff;
+}
+.main-btn{
+  gap: 20px;
+  display: flex;
+}
+a{
+  text-decoration:none ;
+}
+
+.home{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.content-home{ 
+  background-image: url(images/2.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content{
+   display: flex;
+   width: 60%;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   margin-left: 150px;
+   padding: 500px 0;
+   gap: 20px;
+  }
+   .content h2{
+    color:#0cc0df;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow:5px 5px black;
+    text-transform: uppercase;
+   }
+   .content h3{
+    color: #ffffff;
+    font-size: 20px;
+    margin:10px 0;
+    text-shadow:2px 2px black;
+   }
+   .content .btn-home{
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    padding:12px 40px;
+    border-radius: 15px;
+    color: rgb(218, 214, 214);
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    text-shadow:2px 2px black;
+
+   }
+   .btn-home:hover{
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    transform: scalex(1.1);
+    transition-delay:0.2s;
+   }
+   .register , .log-in ,.booking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+    width: 100%;
+   }
+  .title-regitster ,.title-log {
+    background:linear-gradient(100deg,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 150px ;
+    border-bottom-right-radius: 150px ;
+    width: 50%;
+    height: 100vh;
+    gap: 20px;
+  }
+  .title-booking{
+    background:linear-gradient(100deg,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: flex-start;
+    text-align: flex-start;
+    justify-content:center;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 150px ;
+    width: 50%;
+    height: 100vh;
+    gap: 20px;
+    padding: 50px;
+  }
+  .title-regitster h2 , .title-log h2 {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .title-booking h2{
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .title-regitster p ,.title-log p {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .title-booking p{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .title-regitster button ,.title-log button {
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 10px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .title-regitster button:hover ,.title-log button:hover {
+    transition-delay: 0.2s;
+    transform: scaleX(1.1);
+  }
+  .register-sosial h3 {
+    margin-top: 40px;
+  }
+   .box-register ,.box-log {
+    background: #ffffff;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    gap: 30px;
+    padding: 0 100px;
+   }
+   .box-booking{
+    background: #ffffff;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 10px;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    gap: 30px;
+    padding: 0 100px;
+   }
+   .box-register h2,.box-log h2 ,.box-booking h2{
+    font-size:30px;
+    font-weight: bold;
+    color: #000000; 
+    text-transform: uppercase;
+   }
+   .inp{
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+   }
+   .inps { 
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+    input{
+    background: rgb(238, 238, 238);
+    border: none;
+    width:100% ;
+    border-radius: 5px;
+    color: black;
+    padding:15px;
+    font-size: 15px;
+    font-weight: 500;
+   }
+   .box-register button ,.box-log button {
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px ;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+   }
+   .box-booking button{
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px ;
+    border-radius: 10px;
+    width: 25%;
+    border: none;
+    cursor: pointer;
+    margin-right: 500px;
+   }
+    .box-register button:hover,.box-log button:hover ,.box-booking button:hover{
+    transition-delay: 0.2s;
+    transform: scale(1.05);
+   }
+   
+   .about-us{
+    width: 100%;
+    height: 100%;
+    gap: 100px;
+    padding: 200px;
+    display: flex;
+    flex-direction: column;
+   }
+   .content-about{
+    display: flex;
+    gap: 200px;
+    justify-content: flex-start;
+    align-items: flex-start;
+   }
+   .discraiption{
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+   }
+   .discraiption h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: #20cad3;
+    text-transform: uppercase;
+   }
+   .discraiption p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000b4;
+    text-transform: lowercase;
+   }
+   .content-about .img{
+    background-image: url(images/4.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+  }
+  .img h2{
+    font-size: 50px;
+    padding-top: 70px;
+  }
+   .servises{
+    background:#fff;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    text-align: center;
+    flex-direction:column;
+   }
+   .servises h2{
+    color: #5de0e6;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    padding: 50px 0;
+   }
+   .content-services{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 100px 50px;
+   }
+   .service{
+    text-align: center;
+   }
+   .service img{
+    cursor: pointer;
+   }
+   .service img:hover{
+    transform: scale(0.9);
+    transition-delay: 0,2s;
+    border: #000 solid 2px;
+   }
+   .service p{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0;
+    text-transform: uppercase;
+   }
+   .Specialty{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 100px;
+    flex-direction:column;
+    background:#f8f8ff;
+   }
+   .content-Specialty{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 100px;
+    padding: 100px;
+   }
+   .Specialty h1{
+    color: #5de0e6;
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    padding: 50px 0;
+   }
+   .discraiption-doctor{
+    background:#fff;
+    color: #000000;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+   }
+   .discraiption-doctor img{
+    width: 50%;
+    padding: 20px;
+   }
+   .discraiption-doctor button{
+    background:radial-gradient(circle,#5de0e6,#004aad) ;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px ;
+    border-radius: 10px;
+    width: 30%;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+   }
+   .content-discraiption-doctor{
+    padding: 20px 0;
+   }
+  .doctor{
+    background: radial-gradient( circle,#5de0e6,#004aad);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+  }
+  .doctor h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding:50px 0 0;
+  }
+  .boxs-doctors{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 100px;
+  }
+  .box-doctor{
+    position: relative;
+    background: #fff;
+    border-radius: 50px;
+    width: 350px;
+    padding: 50px 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,3);
+    overflow: visible;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box-doctor:hover{
+    transform: scale(1.01);
+    transition-delay:0.2s;
+  }
+  .img-box{
+    border-radius: 50%;
+    position: absolute;
+    top:-80px;
+    left: 30%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,3);
+  }
+   .img-box img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px rgba(0,0,0,3);
+  }
+  .content-box-doctor{
+   width: 290px;
+   height: 150px;
+   margin-bottom: 50px;
+  }
+  .box-doctor h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 20px  0px;
+    color: #222;
+  }
+  .box-doctor p{
+    font-size:10px;
+    font-weight: bold;
+    margin: 10px 20px 0;
+    color: #222;
+  }
+  .btn-select{
+    background:radial-gradient(circle,#5de0e6,#004aad) ;;
+    color: #ffffff;
+    width: 150px;
+    padding: 5px;
+    border-radius: 100px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px 0 5px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+   align-items: center;
+   justify-content: center;
+  }
+  .btn-select:hover{
+    transform: scale(1.05);
+    transition-delay:0.2s;
+  }
+  .register-sosial{
+    height: 100vh;
+  }
+  .contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 100px;
+    text-align: center;
+  }
+  .contact h2{
+    font-size: 50px;
+    font-weight: bold;  
+    margin-top: 50px;
+  }
+  .boxs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+  }
+  .boxs-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    width: 80%;
+  }
+  .box-contact{
+    background:linear-gradient(100deg,#5de0e6,#004aad) ;
+    border-radius: 50px;
+    width: 400px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box-contact h2{
+    color:black;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+  }
+  .box-contact img{
+    width:200px ;
+    padding: 30px;
+  }
+  .box-contact h3{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+  }
+  .social{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .social-media {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  .social-media  img , .social-media2  img{
+    width: 40px;
+  }
+  .register-sosial{
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .social-icon{
+    border: 3px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  } 
+  .social-icon:hover{
+    transform: scale(1.1);
+    transition-delay: 0.2s;
+  }
+  .social-media2{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+  }
+@media (max-width:1023px)
+{
+  .header{
+    padding:12px 15px;
+  }
+  .log{
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .navigation .head{
+    padding-left: 10px;
+    font-size: 10px;
+   font-weight: 700;
+  }
+  .btn-signup1 button{
+    font-size: 10px;
+font-weight: 700;
+padding: 0 5px;
+margin: 5px 10px;
+  }
+  .btn-signup1 button i{
+    font-size: 10px;
+padding:0 2px ;
+  }
+  .btn-login1 button{
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 5px 10px;
+  }
+  .dashbord{
+    background-image: url(images/Untitled\ design\ \(2\).png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+.content{
+  padding: 200px 5px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+ }
+  .content h2{
+   font-size: 20px;
+   margin:0 20px;
+  }
+  .content h3{
+   font-size: 15px;
+   font-weight: bold;
+   padding: 0 70px;
+   margin:10px 10px;
+  }
+  .content .btn-home{
+   padding:7px 12px;
+   margin:5px 100px ;
+   font-size: 10px;
+   font-weight: 700;
+  }
+.sign-up h2{
+  padding-top: 30px ;
+  font-size: 20px;
+ }
+ .BOX-SIGN{
+  width: 220px;
+  padding: 30px 10px;
+  border-radius: 5px;
+}
+.BOX-SIGN h2{
+  font-size:15px;
+  font-weight: bold;
+  padding: 10px 0;
+ }
+ label{
+  margin-left: 20px;
+  font-size: 7px;
+ }
+ .inp{
+  margin: 0px 20px;
+  height: 10px;
+ }
+ .inp input{
+  width:170px ;
+  height: 10px;
+  padding:10px;
+ }
+ .btn-signup{
+  border-radius: 30px;
+  width:160px;
+  padding:2px 0px;
+  margin: 10px 20px;
+  font-size: 10px;
+  font-weight: bold;
+ }
+ .log-up h2{
+  padding-top: 30px ;
+  font-size: 20px;
+ }
+ .BOX-LOG{
+  width: 220px;
+  padding: 30px 10px;
+  border-radius: 5px;
+}
+.BOX-LOG h2{
+  font-size:15px;
+  font-weight: bold;
+  padding: 10px 0;
+ }
+ 
+ .btn-login{
+  border-radius: 30px;
+  width:160px;
+  padding:2px 0px;
+  margin: 10px 20px;
+  font-size: 10px;
+  font-weight: bold;
+ }
+ .BOX-LOG p{
+  font-size: 7px ;
+  font-weight: 400;
+  margin: 2px 50px;
+ }
+ .BOX-LOG p span{
+  font-size: 10px;
+  font-weight: 400;
+ }
+ .img{
+  background-image: url(images/Untitled\ design\ \(6\).png);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+}
+.img h2{
+  font-size: 30px;
+  padding-top: 50px;
+}
+.header2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px 2px;
+  margin-top: 2px;
+ }
+ .navigation2 .head-booking{
+  font-size: 7px;
+  font-weight: 700;
+  margin: 0 20px;
+ }
+ .boxs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 50px;
+  flex-direction: column;
+}
+.box{
+  position: relative;
+  width: 200px;
+  padding: 20px 5px;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .content-box{
+  width: 190px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+.img-box{
+  top:-40px;
+  left: 40%;
+  width: 50px;
+  height: 50px;
+}
+ .img-box img{
+  width: 70px;
+  height: 70px;
+}
+.box h2{
+  font-size: 10px;
+  font-weight: bold;
+  margin: 30px 0 5px;
+  color: #222;
+}
+.box p{
+  font-size: 5px;
+  font-weight: bold;
+  margin: 5px 10px 0;
+  color: #080808;
+}
+.btn-select{
+  width: 50px;
+  padding: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 10px 0 2px;
+}
+}
